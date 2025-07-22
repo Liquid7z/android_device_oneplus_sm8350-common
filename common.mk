@@ -26,10 +26,6 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService-Soong
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
@@ -134,6 +130,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
     dalvik.vm.image-dex2oat-threads=8
 
+# Dolby
+$(call inherit-product, hardware/oplus/dolby/dolby.mk)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
@@ -214,12 +213,20 @@ PRODUCT_ENABLE_UFFD_GC := false
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.1-service.oplus
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_lahaina_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_lahaina.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_lahaina_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_lahaina.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_yupik_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_yupik_v1.xml \
-    $(LOCAL_PATH)/media/media_codecs_yupik_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_yupik_v1.xml
+    $(LOCAL_PATH)/media/media_codecs_yupik_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_yupik_v1.xml \
+    $(LOCAL_PATH)/media/media_codecs_c2_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2_dolby_audio.xml
+
+
+$(call soong_config_set,stagefright,target_disables_thumbnail_block_model,true)
 
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/generic/generic.mk)
@@ -232,7 +239,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
     FrameworksResTarget \
-    NcmTetheringOverlay \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
     OPlusSystemUIResCommon \
@@ -317,8 +323,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
-
-$(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 
 # Thermal
 PRODUCT_PACKAGES += \

@@ -52,7 +52,7 @@ blob_fixups: blob_fixups_user_type = {
     ('odm/lib64/mediadrm/libwvdrmengine.so', 'odm/lib64/libwvhidl.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
     'product/app/PowerOffAlarm/PowerOffAlarm.apk': blob_fixup()
-        .apktool_patch('blob-patches/PowerOffAlarm.patch', '-s'),
+        .apktool_patch('blob-patches/PowerOffAlarm.patch'),
     'system_ext/bin/wfdservice': blob_fixup()
         .add_needed('libwfdservice_shim.so'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
@@ -60,6 +60,7 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib/libwfdmmsrc_system.so': blob_fixup()
         .add_needed('libgui_shim.so'),
     'system_ext/lib/libwfdservice.so': blob_fixup()
+        .add_needed('libaudioclient_shim.so')
         .replace_needed('android.media.audio.common.types-V2-cpp.so', 'android.media.audio.common.types-V4-cpp.so'),
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .replace_needed('android.hidl.base@1.0.so', 'libhidlbase.so')
@@ -73,6 +74,35 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('"max_retry_alloc_output_timeout": 10000,', '"max_retry_alloc_output_timeout": 0,'),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
         .regex_replace('IGNORED_IRQ=27,23,38$', 'IGNORED_IRQ=27,23,38,115,332'),
+    # Dolby START
+    'odm/bin/hw/vendor.dolby_sp.media.c2@1.0-service': blob_fixup()
+        .replace_needed('libcodec2_hidl@1.0.so', 'libcodec2_hidl@1.0_sp.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_sp.so'),
+    'odm/lib64/libcodec2_store_dolby_sp.so': blob_fixup()
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_sp.so'),
+    ('odm/lib64/libcodec2_soft_ac4dec_sp.so', 'odm/lib64/libcodec2_soft_ddpdec_sp.so'): blob_fixup()
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_sp.so')
+        .replace_needed('libcodec2_soft_common.so', 'libcodec2_soft_common_sp.so')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    ('odm/lib64/libcodec2_soft_common_sp.so', 'odm/lib64/libcodec2_hidl_plugin_sp.so'): blob_fixup()
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_sp.so')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    (
+        'odm/lib/libdlbdsservice_v3_6.so',
+        'odm/lib/libstagefright_soft_ddpdec.so',
+        'odm/lib64/libdlbdsservice_sp.so',
+        'odm/lib64/libdlbdsservice_v3_6.so'
+    ): blob_fixup().replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    'odm/lib64/libcodec2_vndk_sp.so': blob_fixup()
+        .replace_needed('libui.so', 'libui_sp.so')
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    'odm/lib64/libcodec2_hidl@1.0_sp.so': blob_fixup()
+        .replace_needed('libcodec2_hidl_plugin.so', 'libcodec2_hidl_plugin_sp.so')
+        .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_sp.so'),
+    'odm/lib64/libui_sp.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V3-ndk.so', 'android.hardware.graphics.common-V5-ndk.so')
+        .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
+    # Dolby END
 }  # fmt: skip
 
 module = ExtractUtilsModule(

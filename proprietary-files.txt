@@ -308,6 +308,45 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libdpmqmihal.so
 
+# Dolby Atmos - from OnePlus 9RT MT2111_14.0.0.730(EX01)
+odm/bin/hw/vendor.dolby_v3_6.hardware.dms360@2.0-service|7951f0ede5108f0080bb8abb18651058db9e46ae
+odm/etc/dolby/multimedia_dolby_dax_default.xml|be49c4cde1bc41f67fbfa2c49ba6d8f4e40eb8dc
+odm/etc/init/vendor.dolby_v3_6.hardware.dms360@2.0-service.rc|5da96cf855061860f27dff6399505f8d1f1daeee
+odm/etc/vintf/manifest/manifest_dax_dolby_v3_6.xml|c4704e5bc4da7cdf291c79389f379c8355eaf730
+odm/etc/audio_effects.xml|35cb765c9acbc16c1c75552dc6cc03ad6f89c0f8
+odm/lib/libstagefright_soft_ddpdec_v3_6.so:odm/lib/libstagefright_soft_ddpdec.so;FIX_SONAME|7b9a91a1d15c90a0d804d372554e561380cd109e|d8bfe5b894f8a175f0dc3fbb2c16da7faafa7e9b
+odm/lib/soundfx/libhwdap_v3_6.so|1992eea271d67bef7482377605a2efa4c2f6dba8
+odm/lib/soundfx/libswdap_v3_6.so|3e521eb43ea5b43e2436f2c46d7b8f169b2f1553
+odm/lib/libdapparamstorage_v3_6.so|c6c36fba280f2373034cf754870611614bf0f22f
+odm/lib/libdeccfg_v3_6.so|742cadaf61aea20eabdac099668bfd43ddf4bb35
+odm/lib/libdlbdsservice_v3_6.so|eac269dfbf334f4cc9d5900fb1c53dbfbaea4d6b|46f7ba8b622a3a6d31d2dcac71581bc1873e3cb1
+odm/lib/vendor.dolby_v3_6.hardware.dms360@2.0.so|d6f89d6499661023dc8fe451ca5c55f1a3ba7d55
+odm/lib64/libdapparamstorage_v3_6.so|d0c9e16ec5a589a9e47a8d3907d7949fd4fdb439
+odm/lib64/libdeccfg_v3_6.so|25a64da2aa3bf9cb2b6fd644547ba1e94cdb47f4
+odm/lib64/libdlbdsservice_v3_6.so|08ae454ff029791ba436f750ca6c717cb6d7bf36|a81056b8a7cf90df84368b8086691f38950613fc
+odm/lib64/vendor.dolby_v3_6.hardware.dms360@2.0-impl.so|5b5f4b383c03a6aaa759b1cc7f6f0aea7d1f6ba0
+odm/lib64/vendor.dolby_v3_6.hardware.dms360@2.0.so|e62f04117fead61eea7f2593e7ccbb565436a0ee
+
+# Dolby Media - from OnePlus 11 CPH2447_15.0.0.401(EX01)
+odm/bin/hw/vendor.dolby_sp.hardware.dmssp@2.0-service|1240cecce2ad8943c2aa5b96381ebeb5e1bac43d
+odm/bin/hw/vendor.dolby_sp.media.c2@1.0-service|cafd800a4e83afa206347886cfed48cdb50cb80c|474935cbe8584567aa932f4284409e81e60eaae2
+odm/etc/init/vendor.dolby.media.c2@1.0-service.rc|6af989419070ea6b4646f47ab78849d7549abda3
+odm/etc/init/vendor.dolby_sp.hardware.dmssp@2.0-service.rc|94c85fbfc93527395fcc1bb7bfb58734f245d4f3
+odm/etc/vintf/manifest/vendor.dolby.hardware.dms.xml|dc9ebef89624d524fe76724e9a220b5d2affe62b
+odm/lib64/libcodec2_hidl@1.0.so:odm/lib64/libcodec2_hidl@1.0_sp.so;FIX_SONAME|4b662f2ecc5c66874f93407c48f492b2d09ce47c|8d18abc58bc31d65c74ba217f6b6370cee733e1c
+odm/lib64/libcodec2_hidl_plugin.so:odm/lib64/libcodec2_hidl_plugin_sp.so;FIX_SONAME|2dbcfda2c7d867edf106fc72d02b11c719f676fb|0488118efefd3426416e53851d2b3093d9e64dbe
+odm/lib64/libcodec2_soft_ac4dec_sp.so|b22d228a84b1698bca8c95aaf67324f47a8262bb|c49695f1b4c2f88d133d67c4acc22c341aeb3a80
+odm/lib64/libcodec2_soft_common.so:odm/lib64/libcodec2_soft_common_sp.so;FIX_SONAME|5cce54ffe4e82ca9d6ca6606ac66b599ac28ea71|4f12770ce036ce5e6cd2424fafe16614ed676c61
+odm/lib64/libcodec2_soft_ddpdec_sp.so|c2034f16911dd7ae4c58c4e05c4f54b4293faef3|d897c315006009d4c7405488f246f4de4a81b87d
+odm/lib64/libcodec2_store_dolby_sp.so|4b9e3bd2fd8ffd49d50b81926cb89f7916c7a212|f1a59b096f7be5a2f09d0648742ec77c46dba06d
+odm/lib64/libdapparamstorage_sp.so|f275e0f47c40b72890ee1cde373e60b4b2ffd711
+odm/lib64/libdeccfg_sp.so|e7f27c1009baecf84835deee1a7e296c5dc3f4e6
+odm/lib64/libdlbdsservice_sp.so|7c1847cce3d0c7f4ce5658090d752e493e8570ea|42b02b3986750dd1bb54504ffbd69e2cff0c6d11
+odm/lib64/libui.so:odm/lib64/libui_sp.so;FIX_SONAME|88b8584db2fa78d0ec06d89f623f8321721051e1|744a404026af1de3f0c5cd56b2d84e9045617815
+odm/lib64/vendor.dolby_sp.hardware.dmssp@2.0-impl.so|b51e6a885a738023ce6ec97b702d6733b70d0a15
+odm/lib64/vendor.dolby_sp.hardware.dmssp@2.0.so|2173d68717cbcdaab98e1cf15a0d410ea00d0271
+vendor/lib64/libcodec2_vndk.so:odm/lib64/libcodec2_vndk_sp.so;FIX_SONAME|d9d17fd476ee2c3593b0f123af957132e34211af|156d0dc125c22b48308143e6566f747b5a1270bc
+
 # DRM
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/qseecomd
@@ -459,25 +498,42 @@ my_product/framework/com.android.hotwordenrollment.common.util.jar:product/frame
 my_product/priv-app/HotwordEnrollmentOKGoogle.apk:product/priv-app/HotwordEnrollmentOKGoogle/HotwordEnrollmentOKGoogle.apk
 my_product/priv-app/HotwordEnrollmentXGoogle.apk:product/priv-app/HotwordEnrollmentXGoogle/HotwordEnrollmentXGoogle.apk
 
-# IMS
-system_ext/app/ImsRcsService/ImsRcsService.apk
-system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
-system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
-system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
-system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
-system_ext/framework/oplus-ims-ext.jar
-system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
-system_ext/lib64/lib-imsvideocodec.so
-system_ext/lib64/lib-imsvt.so
-system_ext/lib64/lib-imsvtextutils.so
-system_ext/lib64/lib-imsvtutils.so
-system_ext/lib64/libdiag_system.so
-system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
-system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
-system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
-system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
-system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
-system_ext/priv-app/ims/ims.apk
+# IMS(SYSTEM) - pinned from LA.QSSI.15.0.r1-15400-qssi.0
+system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml|e4d155e1ba9b6b6b215eec7d70004cba6b6176e5
+system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml|c5c9dd633c3f5450f315017cd4645a11de3d7ed3
+system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml|99b679504b1eba6fd311bd5610beec6988d34cfb
+system_ext/etc/sysconfig/qti_whitelist_system_ext.xml|fc930929bee7d1f8ecc5b1c76193acdc2f923fe7
+-system_ext/app/ImsRcsService/ImsRcsService.apk|8a421431e6dcdadf281a55861c7256e24f6e223c
+-system_ext/framework/vendor.qti.ims.connection-V1.0-java.jar|15781e2856f4da51f548f43de9d3af58c9f49df1
+-system_ext/framework/vendor.qti.ims.connectionaidlservice-V1-java.jar|3641e287eaeb8fb936a16cdf260f09719bf0f5d4
+-system_ext/framework/vendor.qti.ims.datachannelservice-V1-java.jar|598f05b21960d224dd36dce61638281aecc968b8
+-system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar|79e52a4c2fd9bf2b972399568ee84c017b6f24ab
+-system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar|9724b39093bb929455beb41a26ae8768694ea343
+-system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar|d751e2d8c2c6b8f0345f6e2e70e07c4bd68afc60
+-system_ext/framework/vendor.qti.ims.factoryaidlservice-V1-java.jar|5c3c778777f3b6bd22aa14a6c2c2a8b61bc5b656
+-system_ext/framework/vendor.qti.ims.rcssip-V1.0-java.jar|2fee9cd9ac04a08ef10c5aaf039501fcfa4c0395
+-system_ext/framework/vendor.qti.ims.rcssip-V1.1-java.jar|f43fc229ebc92235e12e3946fc8325a9fe943c59
+-system_ext/framework/vendor.qti.ims.rcssip-V1.2-java.jar|b3fe344e360ef53c9c5d6d925c7b9a0f605a324b
+-system_ext/framework/vendor.qti.ims.rcssipaidlservice-V1-java.jar|a7d2a6c9639dfb9dfbdc5361606b419a0384b8d0
+-system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar|06b9dfe2c5c65199f3709d9224c33f53bb958594
+-system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar|40bd25d668607efb933fecd6265940d89f21057b
+-system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar|04f0b4c1ce0bd7ef2fe2153289f5a752c7c1c7cf
+-system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar|26388f7cd876286822e536bb76b1277ef1dc76fa
+-system_ext/lib64/lib-imsvideocodec.so|2db5b8c344b6de05dba4f9a1449fd74e17d78819
+-system_ext/lib64/lib-imsvt.so|32fd182fe087a297395f1d6e1d90587a9b97d7c1
+-system_ext/lib64/lib-imsvtextutils.so|acce4410add2b5088adab8f7b4e37e36e0c09105
+-system_ext/lib64/lib-imsvtutils.so|8a1e06e3edf157b3cba2e608daf70ff0afa823d4
+-system_ext/lib64/libdiag_system.so|e00fa91ebc18ddaa55b3de979a43e1f0648a13b6
+-system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so|0b61c9104edbcf3284daae09b253b2acbed65ad6
+-system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so|7616e2b6a8cb3dd2c7c594eed1b16417a1257125
+-system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so|c27f4e77d677a3e8d1c1c91ca1b40958dfb7f9d6
+-system_ext/lib64/vendor.qti.ims.datachannelservice-V1-ndk.so|4cf18759170f7de629d7197bda926048ebddc481
+-system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|961321653e924726bd01af6bfbb33c6740bc66af
+-system_ext/lib64/vendor.qti.imsrtpservice@3.1.so|33008343e8ac15821278faecc1c234e8bea3fe2d
+-system_ext/priv-app/ims/ims.apk|a7f6f9f5634efa143fe0daa5065d74b91f3e780c
+-system/lib64/vendor.qti.diaghal-V1-ndk.so|ac3381b74861e15a8fb2842dd8d929c97a5f0fa1
+
+# IMS(VENDOR)
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdaemon
 vendor/etc/init/ims_rtp_daemon.rc
@@ -574,6 +630,7 @@ odm/lib/libosie_stub.so
 system_ext/lib/libmmosal.so
 system_ext/lib/libmmparser_lite.so
 system_ext/lib64/libmmosal.so
+system_ext/lib64/libmmparser_lite.so
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/init.qti.media.sh
 vendor/etc/init/init.qti.media.rc
@@ -1541,7 +1598,6 @@ system_ext/lib/libwfduibcsinkinterface.so
 system_ext/lib/libwfduibcsrc.so
 system_ext/lib/libwfduibcsrcinterface.so
 system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
-system_ext/lib64/libmmparser_lite.so
 system_ext/lib64/libmmrtpdecoder.so
 system_ext/lib64/libmmrtpencoder.so
 system_ext/lib64/libwfdclient.so
